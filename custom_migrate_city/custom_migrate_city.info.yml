@@ -1,0 +1,10 @@
+type: module
+name: Custom migrate city
+description: 'Migrate json data to the articles'
+package: Custom Migration
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - drupal:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+version: '8.x'

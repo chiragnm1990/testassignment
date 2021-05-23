@@ -1,0 +1,6 @@
+name: Custom entity
+type: module
+description: Creating custom entity
+package: Custom Entity
+core: 8.x
+project: 'custom entity'

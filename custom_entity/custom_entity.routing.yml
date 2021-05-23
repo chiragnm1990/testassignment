@@ -1,0 +1,47 @@
+entity.custom_entity_city.canonical:
+  path: '/custom_entity_city/{custom_entity_city}'
+  defaults:
+    _entity_view: 'custom_entity_city'
+    _title: 'City content'
+  requirements:
+    _entity_access: 'custom_entity_city.view'
+
+entity.custom_entity_city.collection:
+  path: '/custom_entity_city/list'
+  defaults:
+    _entity_list: 'custom_entity_city'
+    _title: 'City list'
+  requirements:
+    _permission: 'view contact entity'
+
+custom_entity.city_add:
+  path: '/custom_entity_city/add'
+  defaults:
+    _entity_form: custom_entity_city.default
+    _title: 'Add City'
+  requirements:
+    _entity_create_access: 'custom_entity_city'
+
+entity.custom_entity_city.edit_form:
+  path: '/custom_entity_city/{custom_entity_city}/edit'
+  defaults:
+    _entity_form: custom_entity_city.default
+    _title: 'Edit city'
+  requirements:
+    _entity_access: 'custom_entity_city.update'
+
+entity.custom_entity_city.delete_form:
+  path: '/city/{custom_entity_city}/delete'
+  defaults:
+    _entity_form: custom_entity_city.delete
+    _title: 'Delete city'
+  requirements:
+    _entity_access: 'custom_entity_city.delete'
+
+custom_entity.city_settings:
+  path: '/admin/structure/custom_entity_city_settings'
+  defaults:
+    _form: '\Drupal\custom_entity\Form\CitySettingsForm'
+    _title: 'City settings'
+  requirements:
+    _permission: 'administer city entity'

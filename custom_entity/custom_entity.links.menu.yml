@@ -1,0 +1,11 @@
+# Define the menu links for this module
+
+entity.custom_entity_city.collection:
+  title: 'custom_entity_city'
+  route_name: entity.custom_entity_city.collection
+  description: 'List City'
+custom_entity_city.admin.structure.settings:
+  title: 'City settings'
+  description: 'Configure city entity'
+  route_name:  custom_entity.city_settings
+  parent: system.admin_structure

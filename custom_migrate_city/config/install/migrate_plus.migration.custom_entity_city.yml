@@ -1,0 +1,41 @@
+# This migration demonstrates a simple import from a JSON file.
+id: custom_entity_city
+label: JSON feed of custom city
+migration_group: Custom City
+migration_tags:
+  - city migration from mangoDB
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - 'public://cities.json'
+  item_selector: data
+  fields:
+    -
+      name: city
+      label: 'City Name'
+      selector: city
+    -
+      name: _id
+      label: 'ID of the json'
+      selector: _id
+    -
+      name: id
+      label: 'Unique name'
+      selector: id
+  ids:
+    id:
+      type: integer
+process:
+  city_name: city
+  user_id:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: 'entity:custom_entity_city'
+migration_dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - custom_migrate_city
